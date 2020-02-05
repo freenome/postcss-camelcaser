@@ -1,4 +1,5 @@
 .gitignore
+.idea/
 .editorconfig
 
 node_modules/
