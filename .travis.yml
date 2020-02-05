@@ -1,5 +1,15 @@
+dist: bionic
 language: node_js
 node_js:
-  - "6"
-  - "4"
-  - "0.12"
+- '12'
+install:
+- npm config set registry https://packagecloud.io/freenome/js/npm/
+- npm install
+cache:
+  directories:
+  - node_modules
+script:
+- npm test
+env:
+  global:
+    secure: s6/rMWZFW+K7fx4iH7W4HIeTkttgaRDNyZb9jATGq63Qze/NQUnlw6uVxP0JW/57TjwUgw51NVa9Sch7g22dUhXyiSBgsIz5+xzffDUC8M8a63ILTd+V7bMg5s9J0ZoJJ5kNZc3z/voIQtVZg2o3xfyLsnAUrYHL0sjozLOV2uPmCmxda6tRifzP1cvXEpyDaoojK5KXmm2/8B5SJXWWDri8RwTlMCqKDuuVN0wAgtZhekwTOo3d4aQSjueDREPuXDvgQjUYMfW+77lEL4ZU5fmIl4xMoUfFyD2/J2uFI6EaWHSMqJK8ZE//PH7W+idyKT0ZZv31qDRdNKn/MOc9bItR15+jbdGCLTxJ4JVjHwrN4boYPf3FvTBtv1Fp0hH7paD90qjyZVilStETAYgKPU8jSNl+GPoHSFDXZP5Ev+s+UHq4k68yWjrrEPtOizzOdUkEaoyVJJoLGIRuvB7KD2B9jkJ09deeKEIRAmkRU/JqVmZuG6CA8FNM71716ZjeavO+Vz1Lk+FpR0Ea+MAf1pOkGTAsTNumJ1Ko9b04nDj/ovkog0Qyw5WgnTM/iRUlBIsWLfVS6eszMnb91vf6ktL/FjS6dQWNvhVFDQsom/HbGBrfDRPrVvbFAmCpwDN5MpYRMM7k2VrbcVw8ePcSYn/SZurkUGm15y8Y5wUiBiY=
