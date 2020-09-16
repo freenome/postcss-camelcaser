@@ -1,6 +1,6 @@
 {
   "name": "postcss-camelcaser",
-  "version": "0.3.0",
+  "version": "0.3.1",
   "description": "PostCSS plugin which camelcases all your selectors.",
   "keywords": [
     "postcss",
@@ -17,13 +17,13 @@
   },
   "homepage": "https://github.com/freenome/postcss-camelcaser",
   "peerDependencies": {
-    "postcss": "^8.0.3"
+    "postcss": "^8.0.4"
   },
   "devDependencies": {
     "ava": "^0.14.0",
     "eslint": "^2.10.0",
     "eslint-config-postcss": "^2.0.2",
-    "postcss": "^8.0.3"
+    "postcss": "^8.0.4"
   },
   "scripts": {
     "test": "ava && eslint *.js"
