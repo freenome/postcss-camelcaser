@@ -1,30 +1,29 @@
 module.exports = function camelcaser(options) {
     options = options || {};
-    var forceCaseStyle = options.forceCaseStyle || 'lowerCamelCase';
+    let forceCaseStyle = options.forceCaseStyle || 'lowerCamelCase';
     return {
         postcssPlugin: 'camelcaser',
         Rule(rule) {
-            var output = rule.selector.replace(/(-|_){1,}\w/g,
-                function (match) {
-                    return match[match.length - 1].toUpperCase();
-                });
+            let output = rule.selector.replace(/(-|_)+\w/g, function (match) {
+                return match[match.length - 1].toUpperCase();
+            });
             switch (forceCaseStyle) {
-            case 'off':
-                break;
-            case 'UpperCamelCase':
-                output = output.replace(/(\W)[a-z]/g, function (match) {
-                    return match.toUpperCase();
-                });
-                break;
-            case 'lowerCamelCase':
-            default:
-                output = output.replace(/(\W)[A-Z]/g, function (match) {
-                    return match.toLowerCase();
-                });
-                break;
+                case 'off':
+                    break;
+                case 'UpperCamelCase':
+                    output = output.replace(/(\W)[a-z]/g, function (match) {
+                        return match.toUpperCase();
+                    });
+                    break;
+                case 'lowerCamelCase':
+                default:
+                    output = output.replace(/(\W)[A-Z]/g, function (match) {
+                        return match.toLowerCase();
+                    });
+                    break;
             }
             rule.selector = output;
-        }
+        },
     };
 };
 

@@ -1,6 +1,6 @@
 {
   "name": "postcss-camelcaser",
-  "version": "0.3.1",
+  "version": "0.3.2",
   "description": "PostCSS plugin which camelcases all your selectors.",
   "keywords": [
     "postcss",
@@ -20,16 +20,40 @@
     "postcss": "^8.0.4"
   },
   "devDependencies": {
-    "ava": "^0.14.0",
-    "eslint": "^2.10.0",
-    "eslint-config-postcss": "^2.0.2",
+    "@logux/eslint-config": "^41.0.2",
+    "ava": "^3.13.0",
+    "eslint": "^7.11.0",
+    "eslint-config": "^0.3.0",
+    "eslint-config-postcss": "^4.0.0",
+    "eslint-config-standard": "^15.0.0",
+    "eslint-plugin-import": "^2.22.1",
+    "eslint-plugin-jest": "^24.1.0",
+    "eslint-plugin-node": "^11.1.0",
+    "eslint-plugin-prefer-let": "^1.1.0",
+    "eslint-plugin-prettierx": "^0.14.0",
+    "eslint-plugin-promise": "^4.2.1",
+    "eslint-plugin-security": "^1.4.0",
+    "eslint-plugin-standard": "^4.0.2",
+    "eslint-plugin-unicorn": "^23.0.0",
     "postcss": "^8.0.4"
   },
   "scripts": {
-    "test": "ava && eslint *.js"
+    "test": "ava",
+    "lint": "eslint *.js"
   },
   "eslintConfig": {
-    "extends": "eslint-config-postcss/es5"
+    "extends": "eslint-config-postcss",
+    "rules": {
+      "prettierx/options": [
+        "error",
+        {
+          "semi": true,
+          "singleQuote": true
+        }
+      ],
+      "prefer-arrow-callback": "off",
+      "comma-dangle": "off"
+    }
   },
   "publishConfig": {
     "registry": "https://packagecloud.io/freenome/js/npm/"
